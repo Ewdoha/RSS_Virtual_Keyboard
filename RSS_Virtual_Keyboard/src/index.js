@@ -1,28 +1,23 @@
 import "./assets/styles/css.css";
 import "./assets/styles/style.scss";
 
+import {keyRow1, valueKeysArray} from './row_1';
+
+
 const body = document.querySelector('body');
 
-function createKeyboardContainer () {
-  const keyboardContainer = document.createElement('div');
+const keyboardContainer = document.createElement('div');
   keyboardContainer.className = 'keyboard-container';
   body.appendChild(keyboardContainer);
-  createTextArea (keyboardContainer);
-  createKeysContainer (keyboardContainer);
-}
 
-function createTextArea (keyboardContainer) {
-  const textArea = document.createElement('textarea');
+const textArea = document.createElement('textarea');
   textArea.className = 'textarea';
   keyboardContainer.appendChild(textArea);
-}
 
-function createKeysContainer (keyboardContainer) {
-  const keysContainer = document.createElement('div');
+const keysContainer = document.createElement('div');
   keysContainer.className = 'keys-container';
   keyboardContainer.appendChild(keysContainer);
-}
 
-
-
-createKeyboardContainer ();
+  keysContainer.appendChild(keyRow1);
+ 
+  //valueKeysArray.forEach(value => createRow1(value));

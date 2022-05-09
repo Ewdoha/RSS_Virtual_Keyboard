@@ -6,8 +6,8 @@ let capsFlag = false;
 let valueKeysRow1 = ["`","1","2","3","4","5","6","7","8","9","0","-","=","Backspace"];
 let valueKeysRow2 = ["Tab","q","w","e","r","t","y","u","i","o","p","[","]","\\","Del"];
 let valueKeysRow3 = ["CapsLock","a","s","d","f","g","h","j","k","l",";","'","Enter"];
-let valueKeysRow4 = ["Shift","z","x","c","v","b","n","m",",",".","/","-","\u25B2","Shift"];
-let valueKeysRow5 = ["Ctrl","Win","Alt"," ","Alt","\u25C0","\u25BC","\u25B6","Ctrl"];
+let valueKeysRow4 = ["Shift","z","x","c","v","b","n","m",",",".","/","-","top","Shift"];
+let valueKeysRow5 = ["Ctrl","Win","Alt"," ","Alt","left","bottom","right","Ctrl"];
 
 let valueKeysRow1Caps = ["`","1","2","3","4","5","6","7","8","9","0","-","=","Backspace"];
 let valueKeysRow2Caps = ["Tab","Q","W","E","R","T","Y","U","I","O","P","[","]","\\","Del"];
@@ -92,6 +92,8 @@ const keysContainer = document.createElement('div');
   //keysArray.forEach(el => el.textContent == 'Win' ? keyWin = el : false);
   //let keyAltLeft;
   //keysArrayRow5.forEach((el,ind) => ind === 2 ? keyAltLeft = el : false);
+  let keySpace;
+  keysArray.forEach(el => el.textContent == ' ' ? keySpace = el : false);
   //let keyAltRight;
   //keysArrayRow5.forEach((el,ind) => ind === 4 ? keyAltRight = el : false);
   let keyTop;
@@ -249,7 +251,7 @@ const keysContainer = document.createElement('div');
     
   })
 
-  keyTop.addEventListener('click', () => {
+  keyTop.addEventListener('click',function () {
     textAreaText +="\u25B2";
     textArea.value = textAreaText;
   })
@@ -266,6 +268,11 @@ const keysContainer = document.createElement('div');
 
   keyBottom.addEventListener('click', () => {
     textAreaText +="\u25BC";
+    textArea.value = textAreaText;
+  })
+
+  keySpace.addEventListener('click', () => {
+    textAreaText = textAreaText.concat(' ');
     textArea.value = textAreaText;
   })
 //console.log(textAreaText.length);

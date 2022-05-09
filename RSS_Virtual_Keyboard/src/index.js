@@ -4,8 +4,8 @@ import "./assets/styles/style.scss";
 let valueKeysRow1 = ["`","1","2","3","4","5","6","7","8","9","0","-","=","Backspace"];
 let valueKeysRow2 = ["Tab","q","w","e","r","t","y","u","i","o","p","[","]","\\","Del"];
 let valueKeysRow3 = ["CapsLock","a","s","d","f","g","h","j","k","l",";","'","Enter"];
-let valueKeysRow4 = ["Shift","z","x","c","v","b","n","m",",",".","/","-"," ","Shift"];
-let valueKeysRow5 = ["Ctrl","Win","Alt"," ","Alt"," "," "," ","Ctrl"];
+let valueKeysRow4 = ["Shift","z","x","c","v","b","n","m",",",".","/","-","top","Shift"];
+let valueKeysRow5 = ["Ctrl","Win","Alt"," ","Alt","left","bottom","right","Ctrl"];
 
 const body = document.querySelector('body');
 
@@ -56,3 +56,60 @@ const keysContainer = document.createElement('div');
     keysContainer.appendChild(keyRow5);
   }
 
+
+  let keysArray = document.querySelectorAll('.key');
+  let keysArrayRow4 = document.querySelectorAll('.keyRow-4');
+  let keysArrayRow5 = document.querySelectorAll('.keyRow-5');
+
+  let keyBackspace;
+  keysArray.forEach(el => el.textContent == 'Backspace' ? keyBackspace = el : false);
+  let keyTab;
+  keysArray.forEach(el => el.textContent == 'Tab' ? keyTab = el : false);
+  let keyCapsLock;
+  keysArray.forEach(el => el.textContent == 'CapsLock' ? keyCapsLock = el : false);
+  let keyEnter;
+  keysArray.forEach(el => el.textContent == 'Enter' ? keyEnter = el : false);
+  let keyShiftLeft;
+  keysArrayRow4.forEach((el,ind) => ind === 0 ? keyShiftLeft = el : false);
+  let keyShiftRight;
+  keysArrayRow4.forEach((el,ind) => ind === 13 ? keyShiftRight = el : false);
+  let keyCtrlLeft;
+  keysArrayRow5.forEach((el,ind) => ind === 0 ? keyCtrlLeft = el : false);
+  let keyCtrlRight;
+  keysArrayRow5.forEach((el,ind) => ind === 8 ? keyCtrlRight = el : false);
+  let keyWin;
+  keysArray.forEach(el => el.textContent == 'Win' ? keyWin = el : false);
+  let keyAltLeft;
+  keysArrayRow5.forEach((el,ind) => ind === 2 ? keyAltLeft = el : false);
+  let keyAltRight;
+  keysArrayRow5.forEach((el,ind) => ind === 4 ? keyAltRight = el : false);
+  let keyTop;
+  keysArray.forEach(el => el.textContent == 'top' ? keyTop = el : false);
+  let keyLeft;
+  keysArray.forEach(el => el.textContent == 'left' ? keyLeft = el : false);
+  let keyBottom;
+  keysArray.forEach(el => el.textContent == 'bottom' ? keyBottom = el : false);
+  let keyRight;
+  keysArray.forEach(el => el.textContent == 'right' ? keyRight = el : false);
+
+  let textAreaText = "";
+
+  keysArray.forEach(key => key.addEventListener('click', function (event) {
+    if (event.target.textContent === 'Backspace' || event.target.textContent === 'Tab' || event.target.textContent === 'Del' 
+    || event.target.textContent === 'CapsLock' || event.target.textContent === 'Enter' || event.target.textContent === 'Shift'
+    || event.target.textContent === 'Ctrl' || event.target.textContent === 'Alt' || event.target.textContent === 'Win'
+    || event.target.textContent === 'top' || event.target.textContent === 'left' || event.target.textContent === 'right' || event.target.textContent === 'bottom') {
+      false;
+    } else {  
+      textAreaText += event.target.innerText;
+      textArea.innerText = textAreaText;  
+    }
+  }));
+  
+  keyBackspace.addEventListener('click', function () {
+    textArea.innerText = textAreaText;
+    textAreaText = textAreaText.slice(0, -1);
+  })
+  
+  //console.log(textAreaText);
+  

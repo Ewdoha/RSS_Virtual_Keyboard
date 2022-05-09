@@ -11,6 +11,9 @@
   align-items: center;
 
   .textarea{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
     border: 2px solid gray;
     border-bottom: transparent;
     width: 922px;
@@ -43,6 +46,7 @@
           background-color:gray;
           color: white;
           transition: .3s;
+          cursor: pointer;
         }
       }
       .key:nth-child(14){
@@ -126,6 +130,7 @@
         }
       }
       .key:nth-child(55){
+        color:transparent;
         background-image: url(../../assets/img/arrow.png);
         background-repeat: no-repeat;
         background-size: 20px 20px;
@@ -133,6 +138,7 @@
         transform: rotate(-180deg);
       }
       .key:nth-child(62){
+        color:transparent;
         background-image: url(../../assets/img/arrow.png);
         background-repeat: no-repeat;
         background-size: 20px 20px;
@@ -140,6 +146,7 @@
         transform: rotate(90deg);
       }
       .key:nth-child(63){
+        color:transparent;
         background-image: url(../../assets/img/arrow.png);
         background-repeat: no-repeat;
         background-size: 20px 20px;
@@ -147,6 +154,7 @@
         transform: rotate(-360deg);
       }
       .key:nth-child(64){
+        color:transparent;
         background-image: url(../../assets/img/arrow.png);
         background-repeat: no-repeat;
         background-size: 20px 20px;

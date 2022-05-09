@@ -43,10 +43,13 @@
         font-weight: bold;
         &:hover {
           box-shadow: -3px 6px 10px -8px rgba(34, 60, 80, 0.2);
-          background-color:gray;
+          background-color:lighten(gray, 15%);
           color: white;
           transition: .3s;
           cursor: pointer;
+        }
+        &:active{
+          box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.6) inset;
         }
       }
       .key:nth-child(14){
@@ -169,4 +172,8 @@
       }
   }
 
+}
+
+.caps-active{
+  background-color: gray;
 }

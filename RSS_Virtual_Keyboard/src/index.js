@@ -129,6 +129,8 @@ const keysContainer = document.createElement('div');
     textArea.value = textAreaText;
   })
 
+
+  
   keyCapsLock.addEventListener('click', function () {
     console.log(capsFlag);
     //valueKeysRow1 = valueKeysRow1Caps;

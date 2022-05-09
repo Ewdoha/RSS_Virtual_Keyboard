@@ -47,27 +47,117 @@
       }
       .key:nth-child(14){
         width: 157px;
+        background-color: darken(lightgrey, 15%);
+        &:hover{
+          background-color:gray;
+        }
       }
       .key:nth-child(15){
         width: 80px;
+        background-color: darken(lightgrey, 15%);
+        &:hover{
+          background-color:gray;
+        }
       }
       .key:nth-child(29){
         width: 70px;
+        background-color: darken(lightgrey, 15%);
+        &:hover{
+          background-color:gray;
+        }
       }
       .key:nth-child(30){
         width: 100px;
+        background-color: darken(lightgrey, 15%);
+        &:hover{
+          background-color:gray;
+        }
       }
       .key:nth-child(42){
         width: 164px;
+        background-color: darken(lightgrey, 15%);
+        &:hover{
+          background-color:gray;
+        }
       }
       .key:nth-child(43){
         width: 100px;
+        background-color: darken(lightgrey, 15%);
+        &:hover{
+          background-color:gray;
+        }
       }
       .key:nth-child(56){
         width: 107px;
+        background-color: darken(lightgrey, 15%);
+        &:hover{
+          background-color:gray;
+        }
+      }
+      .key:nth-child(57){
+        background-color: darken(lightgrey, 15%);
+        &:hover{
+          background-color:gray;
+        }
+      }
+      .key:nth-child(58){
+        background-color: darken(lightgrey, 15%);
+        &:hover{
+          background-color:gray;
+        }
+      }
+      .key:nth-child(59){
+        background-color: darken(lightgrey, 15%);
+        &:hover{
+          background-color:gray;
+        }
       }
       .key:nth-child(60){
         width: 442px;
+        background-color: darken(lightgrey, 15%);
+        &:hover{
+          background-color:gray;
+        }
+      }
+      .key:nth-child(61){
+        background-color: darken(lightgrey, 15%);
+        &:hover{
+          background-color:gray;
+        }
+      }
+      .key:nth-child(55){
+        background-image: url(../../assets/img/arrow.png);
+        background-repeat: no-repeat;
+        background-size: 20px 20px;
+        background-position: 50% 50%;
+        transform: rotate(-180deg);
+      }
+      .key:nth-child(62){
+        background-image: url(../../assets/img/arrow.png);
+        background-repeat: no-repeat;
+        background-size: 20px 20px;
+        background-position: 50% 50%;
+        transform: rotate(90deg);
+      }
+      .key:nth-child(63){
+        background-image: url(../../assets/img/arrow.png);
+        background-repeat: no-repeat;
+        background-size: 20px 20px;
+        background-position: 50% 50%;
+        transform: rotate(-360deg);
+      }
+      .key:nth-child(64){
+        background-image: url(../../assets/img/arrow.png);
+        background-repeat: no-repeat;
+        background-size: 20px 20px;
+        background-position: 50% 50%;
+        transform: rotate(-90deg);
+      }
+      .key:nth-child(65){
+        background-color: darken(lightgrey, 15%);
+        &:hover{
+          background-color:gray;
+        }
       }
   }
 

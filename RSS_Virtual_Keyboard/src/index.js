@@ -1,12 +1,11 @@
 import "./assets/styles/css.css";
 import "./assets/styles/style.scss";
 
-//import {keyRow1, valueKeysArray} from './row_1';
 let valueKeysRow1 = ["`","1","2","3","4","5","6","7","8","9","0","-","=","Backspace"];
-let valueKeysRow2 = ["Tab","q","w","e","r","t","y","u","i","o","p","[","]","/","Del"];
+let valueKeysRow2 = ["Tab","q","w","e","r","t","y","u","i","o","p","[","]","\\","Del"];
 let valueKeysRow3 = ["CapsLock","a","s","d","f","g","h","j","k","l",";","'","Enter"];
-let valueKeysRow4 = ["Shift","z","x","c","v","b","n","m",",",".","/","-","^","Shift"];
-let valueKeysRow5 = ["Ctrl","Win","Alt"," ","Alt","-","-","-","Ctrl"];
+let valueKeysRow4 = ["Shift","z","x","c","v","b","n","m",",",".","/","-"," ","Shift"];
+let valueKeysRow5 = ["Ctrl","Win","Alt"," ","Alt"," "," "," ","Ctrl"];
 
 const body = document.querySelector('body');
 

@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 
+
 .keyboard-container{
   display: flex;
   flex-direction: column;
@@ -174,6 +175,3 @@
 
 }
 
-.caps-active{
-  background-color: gray;
-}

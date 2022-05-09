@@ -6,8 +6,8 @@ let capsFlag = false;
 let valueKeysRow1 = ["`","1","2","3","4","5","6","7","8","9","0","-","=","Backspace"];
 let valueKeysRow2 = ["Tab","q","w","e","r","t","y","u","i","o","p","[","]","\\","Del"];
 let valueKeysRow3 = ["CapsLock","a","s","d","f","g","h","j","k","l",";","'","Enter"];
-let valueKeysRow4 = ["Shift","z","x","c","v","b","n","m",",",".","/","-","top","Shift"];
-let valueKeysRow5 = ["Ctrl","Win","Alt"," ","Alt","left","bottom","right","Ctrl"];
+let valueKeysRow4 = ["Shift","z","x","c","v","b","n","m",",",".","/","-","\u25B2","Shift"];
+let valueKeysRow5 = ["Ctrl","Win","Alt"," ","Alt","\u25C0","\u25BC","\u25B6","Ctrl"];
 
 let valueKeysRow1Caps = ["`","1","2","3","4","5","6","7","8","9","0","-","=","Backspace"];
 let valueKeysRow2Caps = ["Tab","Q","W","E","R","T","Y","U","I","O","P","[","]","\\","Del"];
@@ -64,6 +64,7 @@ const keysContainer = document.createElement('div');
     keysContainer.appendChild(keyRow5);
   }
 
+  textArea.focus();
 
   let keysArray = document.querySelectorAll('.key');
   let keysArrayRow4 = document.querySelectorAll('.keyRow-4');
@@ -73,6 +74,8 @@ const keysContainer = document.createElement('div');
   keysArray.forEach(el => el.textContent == 'Backspace' ? keyBackspace = el : false);
   let keyTab;
   keysArray.forEach(el => el.textContent == 'Tab' ? keyTab = el : false);
+  let keyDel;
+  keysArray.forEach(el => el.textContent == 'Del' ? keyDel = el : false);
   let keyCapsLock;
   keysArray.forEach(el => el.textContent == 'CapsLock' ? keyCapsLock = el : false);
   let keyEnter;
@@ -81,16 +84,16 @@ const keysContainer = document.createElement('div');
   keysArrayRow4.forEach((el,ind) => ind === 0 ? keyShiftLeft = el : false);
   let keyShiftRight;
   keysArrayRow4.forEach((el,ind) => ind === 13 ? keyShiftRight = el : false);
-  let keyCtrlLeft;
-  keysArrayRow5.forEach((el,ind) => ind === 0 ? keyCtrlLeft = el : false);
-  let keyCtrlRight;
-  keysArrayRow5.forEach((el,ind) => ind === 8 ? keyCtrlRight = el : false);
-  let keyWin;
-  keysArray.forEach(el => el.textContent == 'Win' ? keyWin = el : false);
-  let keyAltLeft;
-  keysArrayRow5.forEach((el,ind) => ind === 2 ? keyAltLeft = el : false);
-  let keyAltRight;
-  keysArrayRow5.forEach((el,ind) => ind === 4 ? keyAltRight = el : false);
+  //let keyCtrlLeft;
+  //keysArrayRow5.forEach((el,ind) => ind === 0 ? keyCtrlLeft = el : false);
+  //let keyCtrlRight;
+  //keysArrayRow5.forEach((el,ind) => ind === 8 ? keyCtrlRight = el : false);
+  //let keyWin;
+  //keysArray.forEach(el => el.textContent == 'Win' ? keyWin = el : false);
+  //let keyAltLeft;
+  //keysArrayRow5.forEach((el,ind) => ind === 2 ? keyAltLeft = el : false);
+  //let keyAltRight;
+  //keysArrayRow5.forEach((el,ind) => ind === 4 ? keyAltRight = el : false);
   let keyTop;
   keysArray.forEach(el => el.textContent == 'top' ? keyTop = el : false);
   let keyLeft;
@@ -128,34 +131,143 @@ const keysContainer = document.createElement('div');
     textAreaText = textAreaText.concat('        ');
     textArea.value = textAreaText;
   })
-
-
   
-  keyCapsLock.addEventListener('click', function () {
+  keyDel.addEventListener('click', function () {
+    let curPos = textArea.selectionStart;              
+    let x = textArea.value;
+    textArea.value=x.slice(0, curPos);
+  })
+
+
+  keyCapsLock.addEventListener('click', caps);
+
+  function caps () {
     console.log(capsFlag);
     //valueKeysRow1 = valueKeysRow1Caps;
     //keysArray.forEach(el => el.remove());
-    if (capsFlag) {  
-      capsFlag = false;  
+    if (!capsFlag) {
+      capsFlag = true; 
+      keyCapsLock.style.backgroundColor = "gray"; 
+      //keysArray.forEach(el => el.remove());
+      //toUpper();
+      
+        
     } else { 
-      capsFlag = true;  
+      capsFlag = false;
+      keyCapsLock.style.backgroundColor = "#adadad";
+      //keysArray.forEach(el => el.remove());
+      //toLower();
+      
     } 
-  }) 
- 
+  }
+
+/*
+  function toLower () {
+    for (let i = 0; i < valueKeysRow1.length; i++) {
+      let keyRow1 = document.createElement('div');
+      keyRow1.className = 'key keyRow-1';
+      keyRow1.textContent = valueKeysRow1[i];
+      keysContainer.appendChild(keyRow1);
+    }
+  
+    for (let i = 0; i < valueKeysRow2.length; i++) {
+      let keyRow2 = document.createElement('div');
+      keyRow2.className = 'key keyRow-2';
+      keyRow2.textContent = valueKeysRow2[i];
+      keysContainer.appendChild(keyRow2);
+    }
+  
+    for (let i = 0; i < valueKeysRow3.length; i++) {
+      let keyRow3= document.createElement('div');
+      keyRow3.className = 'key keyRow-3';
+      keyRow3.textContent = valueKeysRow3[i];
+      keysContainer.appendChild(keyRow3);
+    }
+  
+    for (let i = 0; i < valueKeysRow4.length; i++) {
+      let keyRow4 = document.createElement('div');
+      keyRow4.className = 'key keyRow-4';
+      keyRow4.textContent = valueKeysRow4[i];
+      keysContainer.appendChild(keyRow4);
+    }
+  
+    for (let i = 0; i < valueKeysRow5.length; i++) {
+      let keyRow5 = document.createElement('div');
+      keyRow5.className = 'key keyRow-5';
+      keyRow5.textContent = valueKeysRow5[i];
+      keysContainer.appendChild(keyRow5);
+    }
+  }
+    
+  function toUpper () {
+    for (let i = 0; i < valueKeysRow1Caps.length; i++) {
+      let keyRow1 = document.createElement('div');
+      keyRow1.className = 'key keyRow-1';
+      keyRow1.textContent = valueKeysRow1Caps[i];
+      keysContainer.appendChild(keyRow1);
+    }
+  
+    for (let i = 0; i < valueKeysRow2Caps.length; i++) {
+      let keyRow2 = document.createElement('div');
+      keyRow2.className = 'key keyRow-2';
+      keyRow2.textContent = valueKeysRow2Caps[i];
+      keysContainer.appendChild(keyRow2);
+    }
+  
+    for (let i = 0; i < valueKeysRow3Caps.length; i++) {
+      let keyRow3= document.createElement('div');
+      keyRow3.className = 'key keyRow-3';
+      keyRow3.textContent = valueKeysRow3Caps[i];
+      keysContainer.appendChild(keyRow3);
+    }
+  
+    for (let i = 0; i < valueKeysRow4Caps.length; i++) {
+      let keyRow4 = document.createElement('div');
+      keyRow4.className = 'key keyRow-4';
+      keyRow4.textContent = valueKeysRow4Caps[i];
+      keysContainer.appendChild(keyRow4);
+    }
+  
+    for (let i = 0; i < valueKeysRow5Caps.length; i++) {
+      let keyRow5 = document.createElement('div');
+      keyRow5.className = 'key keyRow-5';
+      keyRow5.textContent = valueKeysRow5Caps[i];
+      keysContainer.appendChild(keyRow5);
+    }
+  }
+ */
   keyEnter.addEventListener('click', function () {
     textAreaText += '\r\n';
     textArea.value = textAreaText;
   })
 
-  
-//console.log(textArea.value);
+  keyShiftLeft.addEventListener('click', function () {
 
-/*  const end = textArea.value.length;
+  })
 
-    textArea.setSelectionRange(end, end);
-    textArea.focus();
+  keyShiftRight.addEventListener('click', function () {
     
-     textArea.focus(); 
-    textArea.moveStart();*/
+  })
+
+  keyTop.addEventListener('click', () => {
+    textAreaText +="\u25B2";
+    textArea.value = textAreaText;
+  })
+
+  keyLeft.addEventListener('click', () => {
+    textAreaText +="\u25B2";
+    textArea.value = textAreaText;
+  })
+
+  keyRight.addEventListener('click', () => {
+    textAreaText +="\u25B6";
+    textArea.value = textAreaText;
+  })
+
+  keyBottom.addEventListener('click', () => {
+    textAreaText +="\u25BC";
+    textArea.value = textAreaText;
+  })
+//console.log(textAreaText.length);
 
   
